@@ -1,10 +1,10 @@
-#iRule - Dynamic Stream with Data Group
+# iRule - Dynamic Stream with Data Group
 
 This iRule dynamically rewrites content on response if the request URI matches an entry in a data group.
 
-##Outline of the iRule
+## Outline of the iRule
 
-###HTTP_REQUEST
+### HTTP_REQUEST
 
 In HTTP_REQUEST, sets flag called dynamicStream to 0 (intial set)
 
@@ -14,7 +14,7 @@ If it does, then set the dynamicStream flag to 1
 
 We also set another variable to the URI so we can pass it to the HTTP_RESPONSE event
 
-###HTTP_RESPONSE
+### HTTP_RESPONSE
 
 In HTTP_RESPONSE, disable STREAM 
 
