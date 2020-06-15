@@ -1,5 +1,4 @@
 when HTTP_REQUEST {
-	STREAM::disable
 	set dynamicStream 0
 	if {[class match [HTTP::uri] contains stream_url]} {
 		set dynamicStream 1
@@ -8,6 +7,7 @@ when HTTP_REQUEST {
 }
 
 when HTTP_RESPONSE {
+	STREAM::disable
 	if {$dynamicStream} {
 		switch [HTTP::header "Content-Type"] {
 			application/javascript -
